@@ -1,43 +1,100 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
-    private CharacterController _charCon;
-    private Transform _cam;
+    [Header("Movement")]
+    private CharacterController _characterController;
+    private Vector3 _direction;
+    private Vector2 _inputAxis;
 
-    [Header("Variables")]
-    [SerializeField] private float walkSpeed = 5f;
-    [SerializeField] private float turnSmoothgTime = 0.1f;
-    private float _turnSmoothVelocity;
+    [SerializeField] private float speed;
+    [SerializeField] private Movement movement;
 
 
-    private void Start()
+    [Header("Rotation")]
+    [SerializeField] private float rotationSpeed = 500f;
+    private Camera _mainCamera;
+
+
+    [Header("Gravity")]
+    private float _gravity = -9.81f;
+    [SerializeField] private float gravityMultiplier = 3.0f;
+    private float _velocity;
+
+
+    private void Awake()
     {
-        _charCon = GetComponent<CharacterController>();
-        _cam = Camera.main.GetComponent<Transform>();
+        _characterController = GetComponent<CharacterController>();
+        _mainCamera = Camera.main;
     }
 
-    void Update()
+    private void Update()
     {
-        Move(); 
+        MoveInput();
+
+        ApplyRotation();
+        ApplyGravity();
+        ApplyMovement();
     }
 
-    private void Move()
+    private void ApplyGravity()
     {
-        float horInput = Input.GetAxisRaw("Horizontal");
-        float verInput = Input.GetAxisRaw("Vertical");
-        Vector3 dir = new Vector3(horInput, 0f, verInput).normalized;
-
-        if (dir.magnitude >= 0.1f)
+        if (IsGrounded() && _velocity < 0.0f)
         {
-            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + _cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothgTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            _charCon.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+            _velocity = -1.0f;
         }
+        else
+        {
+            _velocity += _gravity * gravityMultiplier * Time.deltaTime;
+        }
+
+        _direction.y = _velocity;
     }
+
+    private void ApplyRotation()
+    {
+        if (_inputAxis.sqrMagnitude == 0) return;
+
+        _direction = Quaternion.Euler(0.0f, _mainCamera.transform.eulerAngles.y, 0.0f) * new Vector3(_inputAxis.x, 0.0f, _inputAxis.y);
+        var targetRotation = Quaternion.LookRotation(_direction, Vector3.up);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private void ApplyMovement()
+    {
+        var targetSpeed = movement.isSprinting ? movement.speed * movement.multiplier : movement.speed;
+        movement.currentSpeed = Mathf.MoveTowards(movement.currentSpeed, targetSpeed, movement.acceleration * Time.deltaTime);
+
+        _characterController.Move(_direction * movement.currentSpeed * Time.deltaTime);
+    }
+
+    public void MoveInput()
+    {
+        _inputAxis.x = Input.GetAxisRaw("Horizontal");
+        _inputAxis.y = Input.GetAxisRaw("Vertical");
+        _direction = new Vector3(_inputAxis.x, 0.0f, _inputAxis.y);
+    }
+
+
+    public void Sprint()
+    {
+        movement.isSprinting = Input.GetKeyDown(KeyCode.LeftShift);
+    }
+
+    private bool IsGrounded() => _characterController.isGrounded;
+}
+
+[Serializable]
+public struct Movement
+{
+    public float speed;
+    public float multiplier;
+    public float acceleration;
+
+    [HideInInspector] public bool isSprinting;
+    [HideInInspector] public float currentSpeed;
 }
