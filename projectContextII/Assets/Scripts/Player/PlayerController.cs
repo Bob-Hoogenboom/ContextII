@@ -1,6 +1,10 @@
 using System;
-using System.Collections;
 using UnityEngine;
+
+/// <summary>
+/// This script was taken from https://github.com/chonkgames/Simple-Character-Controller-in-Unity/blob/main/Assets/Scripts/PlayerController.cs
+/// It only serves as a base/ quick functionality test and will be expended oppon
+/// </summary>
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
