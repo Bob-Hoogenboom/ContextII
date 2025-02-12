@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 _direction;
     private Vector2 _inputAxis;
 
-    [SerializeField] private float speed;
-    [SerializeField] private Movement movement;
+    //[SerializeField] private float speed = 5f;
+    [SerializeField] private Movement movement;//5, 2, 100
 
 
     [Header("Rotation")]
