@@ -5,6 +5,7 @@ namespace Player
 {
     public class PlayerMove : AState<Player>
     {
+        private int _moveAnim;
         //RotationVars
         private float rotationSpeed = 500f;
         private Camera _mainCamera;
@@ -13,15 +14,23 @@ namespace Player
         {
             base.Start(runner);
             _mainCamera = Camera.main;
+
+            _moveAnim = Animator.StringToHash("isWalking");
+            runner.anim.SetBool(_moveAnim, true);
         }
 
         public override void Update(Player runner)
         {
             ApplyRotation(runner);
+            ApplyMovement(runner);
 
             if (runner.inputAxis.magnitude <= 0.1f)
             {
                 onSwitch(runner._idleState);
+            }
+            if (!runner.isOnGround)
+            {
+                onSwitch(runner._fallingState);
             }
         }
 
@@ -29,10 +38,20 @@ namespace Player
         {
             Debug.Log("Switching out of Move");
             base.Complete(runner);
+
+            runner.anim.SetBool(_moveAnim, false);
         }
 
 
         //StateFunctions:
+        private void ApplyMovement(Player runner)
+        {
+            var targetSpeed = runner.moveRoutine.isSprinting ? runner.moveRoutine.speed * runner.moveRoutine.multiplier : runner.moveRoutine.speed;
+            runner.moveRoutine.currentSpeed = Mathf.MoveTowards(runner.moveRoutine.currentSpeed, targetSpeed, runner.moveRoutine.acceleration * Time.deltaTime);
+
+            runner.charCon.Move(runner.direction * runner.moveRoutine.currentSpeed * Time.deltaTime);
+        }
+
         private void ApplyRotation(Player runner)
         {
             if (runner.inputAxis.sqrMagnitude == 0) return;

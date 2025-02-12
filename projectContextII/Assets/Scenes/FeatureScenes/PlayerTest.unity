@@ -2914,7 +2914,7 @@ GameObject:
   - component: {fileID: 7189735915002551351}
   - component: {fileID: 7189735915002551352}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerFSM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,7 +2944,7 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.04
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &7189735915002551352
 MonoBehaviour:
@@ -2972,6 +2972,9 @@ MonoBehaviour:
   gravityMultiplier: 3
   gravity: -9.81
   velocity: 0
+  boxSize: {x: 1, y: 0.2, z: 1}
+  maxDistance: 0.1
+  isOnGround: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

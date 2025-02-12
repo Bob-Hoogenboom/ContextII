@@ -19,6 +19,11 @@ namespace Player
             {
                 onSwitch(runner._moveState);
             }
+
+            if (!runner.isOnGround)
+            {
+                onSwitch(runner._fallingState);
+            }
         }
 
         public override void Complete(Player runner)
