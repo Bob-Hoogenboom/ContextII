@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class DialogueManager : MonoBehaviour
     public Image nameBG;
     public TMP_Text dialogueTXT;
 
+    [SerializeField] private float dialogueSpeed = 0.05f;
+    private Player.Player _player;
+
     private Queue<string> sentences;
 
     private void Start()
     {
+        _player = FindObjectOfType<Player.Player>();
         sentences = new Queue<string>();
         dialogueObject.SetActive(false);
     }
@@ -45,11 +50,24 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        dialogueTXT.text = sentence;
+        StopAllCoroutines(); //To avoid coroutines running simultaneously
+        StartCoroutine(DialogueAnimation(sentence));
+    }
+
+    IEnumerator DialogueAnimation(string sentence)
+    {
+        dialogueTXT.text = "";
+
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueTXT.text += letter;
+            yield return new WaitForSeconds(dialogueSpeed);
+        }
     }
 
     private void EndDialogue() 
     {
+        _player.isTalking = false;          //Talking is done!
         dialogueObject.SetActive(false);
         Debug.Log("convo ended");
     }

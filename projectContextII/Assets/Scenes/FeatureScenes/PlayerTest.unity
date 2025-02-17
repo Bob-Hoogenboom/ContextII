@@ -422,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 492622109}
   serializedVersion: 2
   m_LocalRotation: {x: 0.022871338, y: -0.0000020594512, z: -0.00009024807, w: 0.99973845}
-  m_LocalPosition: {x: -0.000010107444, y: 0.000004875985, z: -0.000018629507}
+  m_LocalPosition: {x: -0.000011488027, y: -0.00000036091865, z: -0.000019162662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1516,7 +1516,7 @@ GameObject:
   - component: {fileID: 1734158564}
   - component: {fileID: 1734158566}
   m_Layer: 0
-  m_Name: VC_WorldOrbit_FL
+  m_Name: FL_WorldOrbitCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1733,8 +1733,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774790194}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.094985686, y: 0.01891928, z: -0.017864233, w: 0.9951385}
-  m_LocalPosition: {x: 0.00000023464399, y: -0.000000025895403, z: -0.000000033392382}
+  m_LocalRotation: {x: 0.09498564, y: 0.018919282, z: -0.017864255, w: 0.9951385}
+  m_LocalPosition: {x: -0.00000046874342, y: 0.0000030681242, z: -0.00000226852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1812,8 +1812,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897631923}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.022871403, y: -0.0000018868814, z: -0.00009040372, w: 0.99973845}
-  m_LocalPosition: {x: 0.00000023464399, y: -0.000000025895403, z: -0.000000033392382}
+  m_LocalRotation: {x: 0.022871358, y: -0.0000019874035, z: -0.00009029686, w: 0.99973845}
+  m_LocalPosition: {x: -0.00000046874342, y: 0.0000030681242, z: -0.00000226852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1896,7 +1896,7 @@ MonoBehaviour:
     sentences:
     - This is a test dialogue, my name is Dummy
     - I dont think im such a dummy but i hope you enjoy our game!
-    - Well... i should get goping now... and you should too... just continue this
+    - Well... i should get going now... and you should too... just continue, this
       is getting akward...
 --- !u!1 &2131731841
 GameObject:
