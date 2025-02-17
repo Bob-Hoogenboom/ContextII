@@ -24,6 +24,8 @@ namespace Player
         [SerializeField] private float rayLength = 1f;
         [SerializeField] private float rayHeight = 1f;
 
+        [Header("Interaction")]
+        public bool isTalking = false;
 
         [Header("Gravity")]
         public bool isOnGround;
@@ -40,6 +42,7 @@ namespace Player
         public PlayerIdle _idleState { get; private set; } = new PlayerIdle();
         public PlayerMove _moveState { get; private set; } = new PlayerMove();
         public PlayerFalling _fallingState { get; private set; } = new PlayerFalling();
+        public PlayerTalk talkingState { get; private set; } = new PlayerTalk();
 
 
         private void Start()
@@ -71,7 +74,7 @@ namespace Player
         {
             inputAxis.x = Input.GetAxisRaw("Horizontal");
             inputAxis.y = Input.GetAxisRaw("Vertical");
-            direction = new Vector3(inputAxis.x, 0.0f, inputAxis.y);
+            direction = new Vector3(0, 0.0f, 0);
         }
 
         private void CheckPlayerGround()
@@ -97,7 +100,11 @@ namespace Player
             {
                 IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
 
-                if (interactable == null) return;
+                if (interactable == null)
+                {
+                    interactHit = false;
+                    return;
+                }
 
                 interactHit = true;
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -111,6 +118,9 @@ namespace Player
                             break;
 
                         case InteractType.TALKABLE:
+                            interactable.Interact();
+                            isTalking = true;
+                            stateMachine.SetState(talkingState);
                             Debug.Log("Object is talkable!");
                             //OnSwitch TalkingState
                             break;

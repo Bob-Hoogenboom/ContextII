@@ -32,7 +32,6 @@ namespace Player
 
         public override void Complete(Player runner)
         {
-            Debug.Log("Switching out of Falling");
             base.Complete(runner);
 
             runner.anim.SetBool(_fallingAnim, false);
