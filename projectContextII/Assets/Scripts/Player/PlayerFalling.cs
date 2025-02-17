@@ -16,19 +16,18 @@ namespace Player
 
         public override void Update(Player runner)
         {
+            ApplyFallingGravity(runner);
 
-            if (runner.charCon.isGrounded)
+            if (runner.isOnGround)
             {
                 onSwitch(runner._idleState);
             }
         }
 
-        private void ApplyGravity(Player runner)
+        private void ApplyFallingGravity(Player runner)
         {
             runner.velocity += runner.gravity * runner.gravityMultiplier * Time.deltaTime;
             runner.direction.y = runner.velocity;
-
-            runner.charCon.Move(runner.direction * Time.deltaTime);
         }
 
         public override void Complete(Player runner)

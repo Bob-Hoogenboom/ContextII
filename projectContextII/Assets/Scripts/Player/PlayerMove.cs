@@ -23,6 +23,7 @@ namespace Player
         {
             ApplyRotation(runner);
             ApplyMovement(runner);
+            Sprint(runner);
 
             if (runner.inputAxis.magnitude <= 0.1f)
             {
@@ -46,10 +47,10 @@ namespace Player
         //StateFunctions:
         private void ApplyMovement(Player runner)
         {
-            var targetSpeed = runner.moveRoutine.isSprinting ? runner.moveRoutine.speed * runner.moveRoutine.multiplier : runner.moveRoutine.speed;
-            runner.moveRoutine.currentSpeed = Mathf.MoveTowards(runner.moveRoutine.currentSpeed, targetSpeed, runner.moveRoutine.acceleration * Time.deltaTime);
+            var targetSpeed = runner.moveStruct.isSprinting ? runner.moveStruct.speed * runner.moveStruct.multiplier : runner.moveStruct.speed;
+            runner.moveStruct.currentSpeed = Mathf.MoveTowards(runner.moveStruct.currentSpeed, targetSpeed, runner.moveStruct.acceleration * Time.deltaTime);
 
-            runner.charCon.Move(runner.direction * runner.moveRoutine.currentSpeed * Time.deltaTime);
+            runner.charCon.Move(runner.direction * runner.moveStruct.currentSpeed * Time.deltaTime);
         }
 
         private void ApplyRotation(Player runner)
@@ -60,6 +61,11 @@ namespace Player
             var targetRotation = Quaternion.LookRotation(runner.direction, Vector3.up);
 
             runner.transform.rotation = Quaternion.RotateTowards(runner.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        public void Sprint(Player runner)
+        {
+            runner.moveStruct.isSprinting = Input.GetKey(KeyCode.LeftShift);
         }
     }
 
