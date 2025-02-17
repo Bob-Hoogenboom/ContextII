@@ -37,7 +37,6 @@ namespace Player
 
         public override void Complete(Player runner)
         {
-            Debug.Log("Switching out of Move");
             base.Complete(runner);
 
             runner.anim.SetBool(_moveAnim, false);
