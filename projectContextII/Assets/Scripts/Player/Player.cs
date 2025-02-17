@@ -111,6 +111,7 @@ namespace Player
                             break;
 
                         case InteractType.TALKABLE:
+                            interactable.Interact();
                             Debug.Log("Object is talkable!");
                             //OnSwitch TalkingState
                             break;

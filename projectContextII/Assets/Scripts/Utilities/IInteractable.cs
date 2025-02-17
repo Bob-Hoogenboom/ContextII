@@ -8,4 +8,5 @@ public enum InteractType
 public interface IInteractable 
 {
     InteractType interactType { get; }
+    void Interact();
 }
