@@ -1,5 +1,6 @@
 using FSM;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // This Player Controller uses the Finite Statemachine from a previous class at HKU
@@ -25,7 +26,8 @@ namespace Player
         [SerializeField] private float rayHeight = 1f;
 
         [Header("Interaction")]
-        public bool isTalking = false;
+        public GameObject interactOBJ;
+        public bool isInteracting = false;
 
         [Header("Gravity")]
         public bool isOnGround;
@@ -43,6 +45,7 @@ namespace Player
         public PlayerMove _moveState { get; private set; } = new PlayerMove();
         public PlayerFalling _fallingState { get; private set; } = new PlayerFalling();
         public PlayerTalk talkingState { get; private set; } = new PlayerTalk();
+        public PlayerPush pushingState { get; private set; } = new PlayerPush();
 
 
         private void Start()
@@ -107,27 +110,31 @@ namespace Player
                 }
 
                 interactHit = true;
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && !isInteracting)
                 {
                     InteractType interactType = interactable.interactType;
                     switch (interactType)
                     {
                         case InteractType.PUSHABLE:
-                            Debug.Log("Object is talkable!");
+                            isInteracting = true;
+                            interactOBJ = hit.collider.gameObject;
+                            stateMachine.SetState(pushingState);
+                            Debug.Log("Object is pushable!");
                             //OnSwitch PushingState
                             break;
 
                         case InteractType.TALKABLE:
                             interactable.Interact();
-                            isTalking = true;
+                            isInteracting = true;
                             stateMachine.SetState(talkingState);
                             Debug.Log("Object is talkable!");
                             //OnSwitch TalkingState
                             break;
 
                         case InteractType.CLIMBABLE:
+                            isInteracting = true;
                             Debug.Log("Object is climbable!");
-                            //OnbSwitch ClimbingState
+                            //OnSwitch ClimbingState
                             break;
                     }
                 }

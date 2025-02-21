@@ -18,7 +18,7 @@ namespace Player
         public override void Update(Player runner)
         {
             base.Update(runner);
-            if (!runner.isTalking)
+            if (!runner.isInteracting)
             {
                 onSwitch(runner._idleState);
             }

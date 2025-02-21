@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue() 
     {
-        _player.isTalking = false;          //Talking is done!
+        _player.isInteracting = false;          //Talking is done!
         dialogueObject.SetActive(false);
         Debug.Log("convo ended");
     }
