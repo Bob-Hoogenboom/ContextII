@@ -46,7 +46,7 @@ namespace Player
         //StateFunctions:
         private void ApplyMovement(Player runner)
         {
-            var targetSpeed = runner.moveStruct.isSprinting ? runner.moveStruct.speed * runner.moveStruct.multiplier : runner.moveStruct.speed;
+            float targetSpeed = runner.moveStruct.isSprinting ? runner.moveStruct.speed * runner.moveStruct.multiplier : runner.moveStruct.speed;
             runner.moveStruct.currentSpeed = Mathf.MoveTowards(runner.moveStruct.currentSpeed, targetSpeed, runner.moveStruct.acceleration * Time.deltaTime);
 
             runner.charCon.Move(runner.direction * runner.moveStruct.currentSpeed * Time.deltaTime);
@@ -57,7 +57,7 @@ namespace Player
             if (runner.inputAxis.sqrMagnitude == 0) return;
 
             runner.direction = Quaternion.Euler(0.0f, _mainCamera.transform.eulerAngles.y, 0.0f) * new Vector3(runner.inputAxis.x, 0.0f, runner.inputAxis.y);
-            var targetRotation = Quaternion.LookRotation(runner.direction, Vector3.up);
+            Quaternion targetRotation = Quaternion.LookRotation(runner.direction, Vector3.up);
 
             runner.transform.rotation = Quaternion.RotateTowards(runner.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }

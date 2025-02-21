@@ -28,7 +28,6 @@ namespace Player
 
         public override void Complete(Player runner)
         {
-            Debug.Log("Switching out of Idle");
             base.Complete(runner);
         }
     }
