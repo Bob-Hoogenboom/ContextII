@@ -27,6 +27,8 @@ namespace Player
         public override void Complete(Player runner)
         {
             base.Complete(runner);
+
+            runner.interactOBJ = null;
             //switch back to the freelook orbit camera
         }
     }

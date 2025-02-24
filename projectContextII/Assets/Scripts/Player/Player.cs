@@ -46,6 +46,7 @@ namespace Player
         public PlayerFalling _fallingState { get; private set; } = new PlayerFalling();
         public PlayerTalk talkingState { get; private set; } = new PlayerTalk();
         public PlayerPush pushingState { get; private set; } = new PlayerPush();
+        public PlayerClimb climbingState { get; private set; }  = new PlayerClimb();
 
 
         private void Start()
@@ -63,8 +64,6 @@ namespace Player
             CheckInteract();
 
             stateMachine?.Update();
-
-            charCon.Move(direction * Time.deltaTime);
         }
 
         private void FixedUpdate()
@@ -117,6 +116,7 @@ namespace Player
                     {
                         case InteractType.PUSHABLE:
                             isInteracting = true;
+                            interactable.Interact();
                             interactOBJ = hit.collider.gameObject;
                             stateMachine.SetState(pushingState);
                             Debug.Log("Object is pushable!");
@@ -124,8 +124,9 @@ namespace Player
                             break;
 
                         case InteractType.TALKABLE:
-                            interactable.Interact();
                             isInteracting = true;
+                            interactable.Interact();
+                            interactOBJ = hit.collider.gameObject;
                             stateMachine.SetState(talkingState);
                             Debug.Log("Object is talkable!");
                             //OnSwitch TalkingState
@@ -133,6 +134,9 @@ namespace Player
 
                         case InteractType.CLIMBABLE:
                             isInteracting = true;
+                            interactable.Interact();
+                            interactOBJ = hit.collider.gameObject;
+                            stateMachine.SetState(climbingState);
                             Debug.Log("Object is climbable!");
                             //OnSwitch ClimbingState
                             break;

@@ -25,6 +25,39 @@ namespace Player
             _pushIdleAnim = Animator.StringToHash("pushReady");
             _pushWalkingAnim = Animator.StringToHash("isPushing");
 
+            Vector3 boxPos = runner.interactOBJ.transform.position;
+            Vector3 runnerPos = runner.transform.position;
+            Vector3 forward = runner.transform.forward;
+
+            float dotX = Vector3.Dot(forward, Vector3.right);   // +X
+            float dotNegX = Vector3.Dot(forward, Vector3.left); // -X
+            float dotZ = Vector3.Dot(forward, Vector3.forward); // +Z
+            float dotNegZ = Vector3.Dot(forward, Vector3.back); // -Z
+
+            // Find the maximum dot product value to determine the strongest direction
+            float maxDot = Mathf.Max(dotX, dotNegX, dotZ, dotNegZ);
+
+            if (maxDot == dotX)
+            {
+                Debug.Log("Player is looking mostly towards +X (right)");
+                runner.transform.position = new Vector3(runnerPos.x, runnerPos.y, boxPos.z); // Snap Z, keep X
+            }
+            else if (maxDot == dotNegX)
+            {
+                Debug.Log("Player is looking mostly towards -X (left)");
+                runner.transform.position = new Vector3(runnerPos.x, runnerPos.y, boxPos.z); // Snap Z, keep X
+            }
+            else if (maxDot == dotZ)
+            {
+                Debug.Log("Player is looking mostly towards +Z (forward)");
+                runner.transform.position = new Vector3(boxPos.x, runnerPos.y, runnerPos.z); // Snap X, keep Z
+            }
+            else if (maxDot == dotNegZ)
+            {
+                Debug.Log("Player is looking mostly towards -Z (backward)");
+                runner.transform.position = new Vector3(boxPos.x, runnerPos.y, runnerPos.z); // Snap X, keep Z
+            }
+
             runner.anim.SetBool(_pushIdleAnim, true);
         }
 
@@ -51,6 +84,8 @@ namespace Player
                 {
                     moveDirection = new Vector3(0, 0, Mathf.Sign(inputDirection.z)); // Lock to Z-axis
                 }
+
+                Debug.Log(inputDirection);
 
                 // Determine speed (push vs pull)
                 isPulling = vertical < 0;
@@ -96,6 +131,7 @@ namespace Player
             runner.isInteracting = false;
 
             runner.anim.SetBool(_pushIdleAnim, false);
+            runner.anim.SetBool(_pushWalkingAnim, false);
         }
     } 
 }
