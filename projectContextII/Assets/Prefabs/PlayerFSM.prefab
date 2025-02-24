@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987171289933979644}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -775,6 +775,8 @@ MonoBehaviour:
   interactHit: 0
   rayLength: 1
   rayHeight: 1
+  interactOBJ: {fileID: 0}
+  isInteracting: 0
   isOnGround: 0
   boxSize: {x: 1, y: 0.2, z: 1}
   velocity: 0

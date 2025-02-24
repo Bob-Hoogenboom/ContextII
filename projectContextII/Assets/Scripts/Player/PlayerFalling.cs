@@ -18,6 +18,8 @@ namespace Player
         {
             ApplyFallingGravity(runner);
 
+            runner.charCon.Move(runner.direction * Time.deltaTime);
+
             if (runner.isOnGround)
             {
                 onSwitch(runner._idleState);
