@@ -6,34 +6,41 @@ using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dialogueObject;
+    [Header("References")]
+    public GameObject dialogueUI;
     public TMP_Text nameTXT;
     public Image nameBG;
     public TMP_Text dialogueTXT;
+    public AudioSource dialogueAudioSource;
 
-    [SerializeField] private float dialogueSpeed = 0.05f;
     private Player.Player _player;
+    private Dialogue _dialogue;
 
+    [Header("Variables")]
+    [SerializeField] private float dialogueSpeed = 0.05f;
     private Queue<string> sentences;
+
 
     private void Start()
     {
         _player = FindObjectOfType<Player.Player>();
         sentences = new Queue<string>();
-        dialogueObject.SetActive(false);
+        dialogueUI.SetActive(false);
     }
  
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("StartingConvo" + dialogue.name);
+        _dialogue = dialogue;
+        Debug.Log("StartingConvo" + _dialogue.name);
 
+        StartDialogueAudio();
         sentences.Clear();
-        nameTXT.text = dialogue.name;
-        nameBG.color = dialogue.color;  
-        dialogueObject.SetActive(true);
+        nameTXT.text = _dialogue.name;
+        nameBG.color = _dialogue.color;  
+        dialogueUI.SetActive(true);
 
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in _dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -67,8 +74,16 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue() 
     {
-        _player.isInteracting = false;          //Talking is done!
-        dialogueObject.SetActive(false);
+        _player.isInteracting = false;//Talking is done!
+        dialogueUI.SetActive(false);
+
+        _dialogue.endOfDialogue.Invoke();
         Debug.Log("convo ended");
+    }
+
+    private void StartDialogueAudio()
+    {
+        dialogueAudioSource.clip = _dialogue.clip;
+        dialogueAudioSource.Play();
     }
 }
