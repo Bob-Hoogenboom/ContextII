@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         _dialogue = dialogue;
         Debug.Log("StartingConvo" + _dialogue.name);
 
-        StartDialogueAudio();
+        //StartDialogueAudio();
         sentences.Clear();
         nameTXT.text = _dialogue.name;
         nameBG.color = _dialogue.color;  

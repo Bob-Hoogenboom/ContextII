@@ -1,15 +1,52 @@
+using System.Data;
 using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
 public class Quest
 {
-    public bool isCompleted = false;
-    public bool isActive = false;
+    public QuestDataSO data;
+    public QuestState state;
+    private int currentQuestStepIndex;
 
-    public string questName;
-    [TextArea(3, 10)]
-    public string questDescription;
+    public Quest(QuestDataSO QuestData)
+    {
+        this.data = QuestData;
+        this.state = QuestState.REQUIREMENTS_NOT_MET;
+        this.currentQuestStepIndex = 0;
+    }
 
-    public UnityEvent endOfQuest;
+    public void MoveToNextStep()
+    {
+        currentQuestStepIndex++;
+    }
+
+    public bool CurrentStepExists()
+    {
+        return (currentQuestStepIndex < data.questStepPrefabs.Length);
+    }
+
+    public void InstantiateCurrentQuestStep(Transform parentTransform)
+    {
+        GameObject questStepPrefab = GetCurrentQuestStepPrefab();
+        if (questStepPrefab != null)
+        {
+            Object.Instantiate<GameObject>(questStepPrefab, parentTransform);
+        }
+    }
+
+    private GameObject GetCurrentQuestStepPrefab()
+    {
+        GameObject questStepPrefab = null;
+        if (CurrentStepExists())
+        {
+            questStepPrefab = data.questStepPrefabs[currentQuestStepIndex];
+        }
+        else
+        {
+            Debug.LogWarning("The step index was out of range " + data.id + " " + currentQuestStepIndex);
+        }
+
+        return questStepPrefab;
+    }
 }
