@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bf80e8794f286a40bb0b46a0995671f,
         type: 3}
       propertyPath: m_Name
-      value: Lantaarn01_low
+      value: Lantern
       objectReference: {fileID: 0}
     - target: {fileID: 4184444395187272755, guid: 2bf80e8794f286a40bb0b46a0995671f,
         type: 3}
@@ -107,5 +107,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7706739, y: 3.5277517, z: 0.77067393}
-  m_Center: {x: 0.00000461936, y: 1.7584187, z: -0.000008136034}
+  m_Size: {x: 0.37730664, y: 3.5277517, z: 0.38823366}
+  m_Center: {x: 0.00000461936, y: 1.7584187, z: 0.0054552928}

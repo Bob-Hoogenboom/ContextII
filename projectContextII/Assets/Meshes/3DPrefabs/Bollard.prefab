@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b554f740f1fee264fad7005328cf7e40,
         type: 3}
       propertyPath: m_Name
-      value: Paaltje
+      value: Pillar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -102,5 +102,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5944377, y: 1.2078052, z: 0.59474397}
-  m_Center: {x: 0.000000014901161, y: 0.6039026, z: 0}
+  m_Size: {x: 0.396654, y: 1.2078052, z: 0.38028204}
+  m_Center: {x: -0.000000007450581, y: 0.6039026, z: 0.0023456812}
