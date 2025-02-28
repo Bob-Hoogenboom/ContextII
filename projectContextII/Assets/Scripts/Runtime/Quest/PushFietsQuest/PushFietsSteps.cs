@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PushFietsSteps : QuestStep
 {
+    private bool _fietsIsGeduwed = false;
+
     private void OnEnable()
     {
         GameManager.instance.miscEvents.onFietsGeduwed += FietsGeduwed;
@@ -16,6 +18,14 @@ public class PushFietsSteps : QuestStep
 
     private void FietsGeduwed()
     {
-        FinishedQuestStep();
+        if (!_fietsIsGeduwed)
+        {
+            _fietsIsGeduwed=true;
+        }
+
+        if (_fietsIsGeduwed)
+        {
+            FinishedQuestStep();
+        }
     }
 }

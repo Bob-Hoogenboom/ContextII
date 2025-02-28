@@ -31,6 +31,12 @@ public class QuestManager : MonoBehaviour
         //broadcast the intitial state of all quests on startup
         foreach (Quest quest in _questMap.Values)
         {
+            // initialize any loaded quest steps
+            if (quest.state == QuestState.IN_PROGRESS)
+            {
+                quest.InstantiateCurrentQuestStep(this.transform);
+            }
+            // broadcast the initial state of all quests on startup
             GameManager.instance.questEvents.QuestStateChange(quest);
         }
     }
@@ -41,7 +47,10 @@ public class QuestManager : MonoBehaviour
         foreach(Quest quest in _questMap.Values)
         {
             //TODO: Set an if statement for a requirement to start a quest, for now we can start every quest immediatly
-            ChangeQuestState(quest.data.id, QuestState.CAN_START);
+            if(quest.state == QuestState.REQUIREMENTS_NOT_MET)
+            {
+                ChangeQuestState(quest.data.id, QuestState.CAN_START);
+            }
         }
     }
 
@@ -54,20 +63,40 @@ public class QuestManager : MonoBehaviour
 
     private void StartQuest(string id)
     {
-        //TODO start Quest
         Debug.Log("Start Quest: " + id);
+
+        Quest quest = GetQuestById(id);
+        quest.InstantiateCurrentQuestStep(this.transform);
+        ChangeQuestState(quest.data.id, QuestState.IN_PROGRESS);
+
     }
 
     private void AdvanceQuest(string id)
     {
         //TODO advance Quest
         Debug.Log("Advance Quest: " + id);
+
+        Quest quest = GetQuestById(id);
+
+        //Move to next step
+        quest.MoveToNextStep();
+
+        //if there are more steps continue
+        if (quest.CurrentStepExists())
+        {
+            quest.InstantiateCurrentQuestStep(this.transform);
+        }
+        //if there are none, finish quest
+        else
+        {
+            ChangeQuestState(quest.data.id, QuestState.CAN_FINISH);
+        }
     }
 
     private void FinishQuest(string id)
     {
-        //TODO finish Quest
-        Debug.Log("Finish Quest: " + id);
+        Quest quest = GetQuestById(id);
+        ChangeQuestState(quest.data.id, QuestState.FINISHED);
     }
 
     private Dictionary<string, Quest> CreateQuestMap()

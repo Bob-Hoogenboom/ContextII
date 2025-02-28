@@ -35,7 +35,7 @@ public class QuestIndicator : MonoBehaviour
             case QuestState.IN_PROGRESS:
                 if (finishPoint) questInProgress.SetActive(true);
                 break;
-            case QuestState.CAN_FINISHED:
+            case QuestState.CAN_FINISH:
                 if (finishPoint) questCanFinished.SetActive(true);
                 break;
             case QuestState.FINISHED:

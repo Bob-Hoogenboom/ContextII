@@ -5,6 +5,13 @@ using UnityEngine;
 public abstract class QuestStep : MonoBehaviour
 {
     private bool isFinished = false;
+    private string questId;
+
+    public void InitializeQuestStep(string id)
+    {
+        this.questId = id;
+    }
+
 
     protected void FinishedQuestStep()
     {
@@ -12,7 +19,7 @@ public abstract class QuestStep : MonoBehaviour
         {
             isFinished = true;
 
-            //TODO - Advance to next step in the quest
+            GameManager.instance.questEvents.AdvanceQuest(questId);
 
             Destroy(this.gameObject);
         }

@@ -59,7 +59,7 @@ public class NPC : MonoBehaviour, IInteractable
         {
             GameManager.instance.questEvents.StartQuest(questData.id);
         }
-        else if (_currentQuestState.Equals(QuestState.CAN_FINISHED) && finishPoint)
+        else if (_currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {
             GameManager.instance.questEvents.FinishQuest(questData.id);
         }
