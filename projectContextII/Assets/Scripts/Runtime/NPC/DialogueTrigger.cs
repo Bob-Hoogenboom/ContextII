@@ -11,9 +11,10 @@ public class DialogueTrigger : MonoBehaviour ,IInteractable
     public void Interact()
     {
         TriggerDialogue();
+
     }
 
-    public void TriggerDialogue()
+    private void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }

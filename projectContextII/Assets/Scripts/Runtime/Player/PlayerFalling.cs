@@ -36,6 +36,7 @@ namespace Player
         {
             base.Complete(runner);
 
+            runner.velocity = 0; //Make sure the character doesn't fall 
             runner.anim.SetBool(_fallingAnim, false);
         }
     }

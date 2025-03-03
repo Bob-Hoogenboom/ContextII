@@ -140,6 +140,14 @@ namespace Player
                             Debug.Log("Object is climbable!");
                             //OnSwitch ClimbingState
                             break;
+
+                        case InteractType.DEFAULT:
+                            interactable.Interact();
+                            break;
+
+                        default:
+                            Debug.LogWarning("Wow buddy thats not interactable");
+                            break;
                     }
                 }
             }

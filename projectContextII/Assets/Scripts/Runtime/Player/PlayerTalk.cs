@@ -6,6 +6,7 @@ namespace Player
 {
     public class PlayerTalk : AState<Player>
     {
+        private int _talkAnim;
         private CinemachineFreeLook fLCam;
         //private dialogue camera variable*
 
@@ -13,6 +14,9 @@ namespace Player
         {
             base.Start(runner);
             fLCam = Camera.main.GetComponent<CinemachineFreeLook>(); //switch to a dialogue camera
+
+            _talkAnim = Animator.StringToHash("isTalking");
+            runner.anim.SetBool(_talkAnim, true);
         }
 
         public override void Update(Player runner)
@@ -30,6 +34,8 @@ namespace Player
 
             runner.interactOBJ = null;
             //switch back to the freelook orbit camera
+
+            runner.anim.SetBool(_talkAnim, false);
         }
     }
 }

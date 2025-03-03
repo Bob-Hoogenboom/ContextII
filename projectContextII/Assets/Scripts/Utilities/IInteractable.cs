@@ -2,7 +2,8 @@ public enum InteractType
 {
     PUSHABLE,
     TALKABLE,
-    CLIMBABLE
+    CLIMBABLE,
+    DEFAULT
 }
 
 public interface IInteractable 
