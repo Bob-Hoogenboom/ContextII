@@ -48,9 +48,10 @@ public class NPC : MonoBehaviour, IInteractable
 
     private void TriggerDialogue()
     {
-        if (dialogueIndex >= dialogue.Length) dialogueIndex = 0;
+        //Ternary operator 'var = con? exp true : exp false;'
+        int dialogueToPlay = dialogueIndex >= dialogue.Length? dialogueIndex -1 : dialogueIndex;
 
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue[dialogueIndex]);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue[dialogueToPlay]);
     }
 
     private void TriggerQuest()
@@ -74,6 +75,7 @@ public class NPC : MonoBehaviour, IInteractable
             _currentQuestState = quest.state;
             //Debug.Log("Quest with id: " + questData.id + " updated to State: " + _currentQuestState);
             _questIndicator.SetState(_currentQuestState, startPoint, finishPoint);
+            dialogueIndex = ((int)_currentQuestState);
         }
     }
 }

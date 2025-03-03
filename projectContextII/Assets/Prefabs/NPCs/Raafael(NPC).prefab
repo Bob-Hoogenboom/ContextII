@@ -72,7 +72,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueIndex: 0
   dialogue:
-  - name: Raafael
+  - QuestState: 0
+    name: Raafael
+    color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
+    clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
+    sentences:
+    - Hey, wat moet je van me?
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 1
+    name: Raafael
     color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
     clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
     sentences:
@@ -80,6 +90,34 @@ MonoBehaviour:
     - Fatbikes zijn VEEEEL sneller dan die stomme fiets daar.
     - Ze zouden al die fietsen moeten omtrappen, in de gracht gooien en ook een coole
       fatbike moeten kopen
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 2
+    name: Raafael
+    color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
+    clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
+    sentences:
+    - Fatbike gang, lets goooo
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 3
+    name: Raafael
+    color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
+    clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
+    sentences:
+    - HAHAHA YESSS lekker gedaan ouwe, stomme fietsen ook overal hier in utrecht
+      haha
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 4
+    name: Raafael
+    color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
+    clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
+    sentences:
+    - haha kan nog steeds niet geloven dat je dat deed, goud ouwe
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
