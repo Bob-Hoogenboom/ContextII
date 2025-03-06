@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b554f740f1fee264fad7005328cf7e40,
         type: 3}
       propertyPath: m_Name
-      value: Pillar
+      value: Bollard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
