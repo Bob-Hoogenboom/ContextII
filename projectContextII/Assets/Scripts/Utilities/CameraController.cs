@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         _cinemachineFL = GetComponent<CinemachineFreeLook>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

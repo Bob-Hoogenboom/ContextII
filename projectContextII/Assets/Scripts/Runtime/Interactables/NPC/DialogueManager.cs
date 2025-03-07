@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         nameTXT.text = _dialogue.name;
         nameBG.color = _dialogue.color;  
         dialogueUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
 
 
         foreach (string sentence in _dialogue.sentences)
@@ -76,11 +77,13 @@ public class DialogueManager : MonoBehaviour
     {
         _player.isInteracting = false;//Talking is done!
         dialogueUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
 
         _dialogue.endOfDialogue.Invoke();
         Debug.Log("convo ended");
     }
 
+    //TODO When the dynamic audio system is ready this can be implemented to play when dialogue starts
     private void StartDialogueAudio()
     {
         dialogueAudioSource.clip = _dialogue.clip;
