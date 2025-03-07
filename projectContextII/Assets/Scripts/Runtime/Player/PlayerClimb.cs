@@ -20,10 +20,11 @@ namespace Player
         public override void Start(Player runner)
         {
             base.Start(runner);
+            runner.charCon.radius = 0.05f;
             
             runner.transform.LookAt(runner.interactOBJ.transform.position, Vector3.up);
 
-            _raylength = (runner.transform.position - runner.interactOBJ.transform.position).magnitude;
+            _raylength = (runner.transform.position - runner.interactOBJ.transform.position).magnitude + 1;
 
             _trigger = runner.interactOBJ.GetComponent<ClimbTrigger>();
         }
@@ -58,6 +59,8 @@ namespace Player
             base.Complete(runner);
 
             Debug.Log("Exit Climb State");
+
+            runner.charCon.radius = 0.5f;
 
             runner.interactOBJ = null;
             runner.isInteracting = false;

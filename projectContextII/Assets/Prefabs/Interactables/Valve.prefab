@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8432884499758376615}
+  - component: {fileID: 6603239426885578536}
   m_Layer: 0
   m_Name: Valve
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8252913024503709554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.321817, y: 15.407, z: -11.163561}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34,6 +35,21 @@ Transform:
   - {fileID: 387195768056971886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6603239426885578536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252913024503709554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc232a5f4f35164cb841c61c7bb7421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3870259956416555849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,16 +132,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8432884499758376615}
     m_Modifications:
-    - target: {fileID: 6022431980045084839, guid: bc368a16e0dab3c47b37e51ee80773a1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.23160306
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022431980045084839, guid: bc368a16e0dab3c47b37e51ee80773a1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.23160306
-      objectReference: {fileID: 0}
     - target: {fileID: 6022431980045084839, guid: bc368a16e0dab3c47b37e51ee80773a1,
         type: 3}
       propertyPath: m_LocalPosition.x
