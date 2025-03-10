@@ -1,6 +1,5 @@
 using FSM;
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 // This Player Controller uses the Finite Statemachine from a previous class at HKU
@@ -11,6 +10,7 @@ namespace Player
     {
         [Header("References")]
         public CharacterController charCon;
+        public WorldSpaceUI worldSpaceUI;
         public Animator anim;
 
         [Header("Movement")]
@@ -27,6 +27,7 @@ namespace Player
 
         [Header("Interaction")]
         public GameObject interactOBJ;
+        private IInteractable lastInteractable = null;
         public bool isInteracting = false;
 
         [Header("Gravity")]
@@ -52,6 +53,7 @@ namespace Player
         private void Start()
         {
             charCon = gameObject.GetComponent<CharacterController>();
+            worldSpaceUI = FindObjectOfType<WorldSpaceUI>();
             anim = gameObject.GetComponentInChildren<Animator>();
 
             stateMachine = new StateMachine<Player>(this);
@@ -108,10 +110,19 @@ namespace Player
                     return;
                 }
 
+                if (lastInteractable != interactable)
+                {
+                    lastInteractable?.HidePopUp();
+                    lastInteractable = interactable;
+                }
+
+                InteractType interactType = interactable.interactType;
+
+                interactable.InteractPopUp();
+
                 interactHit = true;
                 if (Input.GetKeyDown(KeyCode.Space) && !isInteracting)
                 {
-                    InteractType interactType = interactable.interactType;
                     switch (interactType)
                     {
                         case InteractType.PUSHABLE:
@@ -149,6 +160,14 @@ namespace Player
                             Debug.LogWarning("Wow buddy thats not interactable");
                             break;
                     }
+                }
+            }
+            else
+            {
+                if (lastInteractable != null)
+                {
+                    lastInteractable.HidePopUp();
+                    lastInteractable = null;
                 }
             }
         }

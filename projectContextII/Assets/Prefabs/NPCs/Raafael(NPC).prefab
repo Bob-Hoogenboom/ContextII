@@ -125,6 +125,8 @@ MonoBehaviour:
   startPoint: 1
   finishPoint: 1
   _questIndicator: {fileID: 734316225638880950}
+  interactDescription: Praten
+  interactIcon: {fileID: 21300000, guid: 943277f9bf930114a9e4f81e125fd433, type: 3}
 --- !u!1001 &7934817693628153119
 PrefabInstance:
   m_ObjectHideFlags: 0
