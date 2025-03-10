@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 508557658}
   - component: {fileID: 508557659}
   m_Layer: 0
-  m_Name: Main AudioSource is Hier Miguel!
+  m_Name: Main AudioSource voor Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
