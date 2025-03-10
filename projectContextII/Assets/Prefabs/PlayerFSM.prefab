@@ -778,7 +778,7 @@ MonoBehaviour:
   interactOBJ: {fileID: 0}
   isInteracting: 0
   isOnGround: 0
-  boxSize: {x: 1, y: 0.2, z: 1}
+  boxSize: {x: 1, y: 0.3, z: 1}
   velocity: 0
   gravity: -9.81
   gravityMultiplier: 3
