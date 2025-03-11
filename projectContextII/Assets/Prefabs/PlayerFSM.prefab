@@ -742,13 +742,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.6
+  m_Height: 1.8
   m_Radius: 0.5
   m_SlopeLimit: 60
   m_StepOffset: 0.5
   m_SkinWidth: 0.04
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &6391877743068290125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charCon: {fileID: 0}
+  worldSpaceUI: {fileID: 0}
   anim: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   inputAxis: {x: 0, y: 0}
@@ -778,6 +779,7 @@ MonoBehaviour:
   interactOBJ: {fileID: 0}
   isInteracting: 0
   isOnGround: 0
+  heightOffset: {x: 0, y: 0, z: 0}
   boxSize: {x: 1, y: 0.2, z: 1}
   velocity: 0
   gravity: -9.81

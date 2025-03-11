@@ -22,6 +22,20 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField]
     private QuestIndicator _questIndicator;
 
+
+    [Header("Interface")]
+    [SerializeField]
+    private string interactDescription = "";
+    [SerializeField]
+    private Sprite interactIcon;
+
+    public InteractType interactType => InteractType.TALKABLE;
+    public event IInteractable.InteractUI OnInteractUIUpdate;
+    public event IInteractable.UIHideEvent OnUIHide; 
+    public string InteractDescription => interactDescription;
+    public Sprite InteractIcon => interactIcon;
+
+
     private void Awake()
     {
         _questIndicator.GetComponentInChildren<QuestIndicator>();
@@ -37,13 +51,23 @@ public class NPC : MonoBehaviour, IInteractable
         GameManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
     }
 
-    public InteractType interactType => InteractType.TALKABLE;
+
 
     public void Interact()
     {
         TriggerDialogue();
 
         if (questData != null) TriggerQuest();
+    }
+
+    public void InteractPopUp()
+    {
+        OnInteractUIUpdate?.Invoke(interactDescription, interactIcon, transform);
+    }
+
+    public void HidePopUp()
+    {
+        OnUIHide?.Invoke();
     }
 
     private void TriggerDialogue()
