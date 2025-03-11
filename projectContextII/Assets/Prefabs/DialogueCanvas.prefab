@@ -708,7 +708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resume
+  m_text: Hervatten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09dcf46ba031692458c3d530d73255f6, type: 2}
   m_sharedMaterial: {fileID: 5846960651741946147, guid: 09dcf46ba031692458c3d530d73255f6,
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Return To Main Menu
+  m_text: Terug Naar Hoofd Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09dcf46ba031692458c3d530d73255f6, type: 2}
   m_sharedMaterial: {fileID: 5846960651741946147, guid: 09dcf46ba031692458c3d530d73255f6,
