@@ -32,6 +32,7 @@ namespace Player
 
         [Header("Gravity")]
         public bool isOnGround;
+        public Vector3 heightOffset;
         public Vector3 boxSize; //Detection box for the ground checking 
         [HideInInspector] public float velocity;
         [HideInInspector] public float gravity = -9.81f;
@@ -83,7 +84,7 @@ namespace Player
 
         private void CheckPlayerGround()
         {
-            Collider[] floorHit = Physics.OverlapBox(transform.position, boxSize / 2, Quaternion.identity);
+            Collider[] floorHit = Physics.OverlapBox(transform.position + heightOffset, boxSize / 2, Quaternion.identity);
             if (floorHit.Length > 0)
             {
                 isOnGround = true;
@@ -186,7 +187,7 @@ namespace Player
         void OnDrawGizmos()
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawCube(transform.position, boxSize);
+            Gizmos.DrawCube(transform.position + heightOffset, boxSize);
 
             Vector3 pos = transform.position;
             Vector3 rayOrigin = new Vector3(pos.x, pos.y + rayHeight, pos.z);
