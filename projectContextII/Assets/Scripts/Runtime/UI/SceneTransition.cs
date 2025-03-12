@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private CircleWipeController circleWipe;
+
+    public void GoToScene(int sceneIndex = 0)
     {
-        
+        circleWipe.CircleFadeOut(() =>
+        {
+            SceneManager.LoadScene(sceneIndex);
+            circleWipe.CircleFadeIn();
+        });
     }
 }
+
