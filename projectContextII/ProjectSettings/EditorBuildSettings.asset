@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalScenes/Utrecht.unity
     guid: 5dac78ae4835594478ed210e5d662700
   - enabled: 1
-    path: Assets/Scenes/InteriorFlowershop.unity
+    path: Assets/Scenes/FinalScenes/InteriorFlowershop.unity
     guid: 4e33a1ae2f3d9804db5d8f803c3cbaa5
   - enabled: 1
     path: Assets/Scenes/BasementFlowershop.unity
