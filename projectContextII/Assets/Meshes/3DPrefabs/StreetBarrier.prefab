@@ -106,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 366ebad93fb821642a2374847a3ed81a,
         type: 3}
       propertyPath: m_Name
-      value: Afzethek
+      value: StreetBarrier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -142,5 +142,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.27982, y: 1.87353, z: 1.6491308}
-  m_Center: {x: 0, y: 0.95061165, z: 0}
+  m_Size: {x: 1.5169563, y: 1.87353, z: 1.6491308}
+  m_Center: {x: 0.021835603, y: 0.95061177, z: 0}
