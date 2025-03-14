@@ -42,7 +42,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 061979070e85297479063a425ccc60c6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ba17312347435f458b7cd551716b4a4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -58,15 +58,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: d1fbcdd2f249fb944b59465e7654a5cd, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3854d93b51bb0b48803cb29f4a574fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d120a99c4be24984d94666eb9c95bfd1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 25d30c5498a58494c94c30e74b26dfaf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 7b0b8ececa4e4484db96b0c6b863c4f6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3430756726f2ae24592c1de171857b8b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -78,7 +78,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 897da6964a164af44a391fca725c6c91, type: 3}
+        m_Texture: {fileID: 2800000, guid: 028757288e7591742950bd15bf7cf968, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -139,6 +139,7 @@ Material:
     - _AlbedoColorShift: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _ColorOverlay: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
