@@ -19,7 +19,7 @@ public class QuestDataSO : ScriptableObject
     public GameObject[] questStepPrefabs;
 
     [Header("Rewards")]
-    public int respect;
+    public int duurzaamheid;
 
     //enforce the name of the ID to be the name of the object
     private void OnValidate()

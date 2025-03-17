@@ -8,12 +8,12 @@ public class CircleWipeController : MonoBehaviour
     private Animator _anime;
     private Image _image;
     private readonly int _circleDiaHash = Shader.PropertyToID("_CircleDiameter");
-    private readonly int _fadeInHash;
-    private bool _isIn = false;
+    private readonly int _fadeInHash = Animator.StringToHash("circleIn");
+    private readonly int _fadeOutHash = Animator.StringToHash("circleOut");
 
     // Delegate for transition completion
     public Action OnFadeOutComplete;
-    public float transitionTime = 1.5f; // Set this to match your animation duration
+    public float transitionTime = 1.5f; //TODO, maker time last as long as the animation clip instead of hard value
     public float circleDiameter = 0f;
 
     private void Start()
@@ -30,8 +30,7 @@ public class CircleWipeController : MonoBehaviour
 
     public void CircleFadeIn() 
     {
-        _anime.SetTrigger("circleIn");
-        _isIn = true;
+        _anime.SetTrigger(_fadeInHash);
     }
     public void CircleFadeOut(Action onComplete) 
     {
@@ -40,7 +39,7 @@ public class CircleWipeController : MonoBehaviour
 
      private IEnumerator FadeOutComplete(Action onComplete)
     {
-        _anime.SetTrigger("circleOut");
+        _anime.SetTrigger(_fadeOutHash);
 
         yield return new WaitForSeconds(transitionTime);
 

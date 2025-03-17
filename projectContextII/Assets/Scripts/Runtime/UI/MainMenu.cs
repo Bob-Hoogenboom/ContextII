@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //Failsafe for cursor locking
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     private void OnGUI()
     {
         string versionText = Application.version.ToString();
