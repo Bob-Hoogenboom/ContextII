@@ -13,8 +13,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null) Destroy(this); //Mom said there can only be one GameManager in the scene QwQ
-
+        //Mom said there can only be one GameManager in the scene QwQ
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         instance = this;
 
         questEvents = new QuestEvents();
