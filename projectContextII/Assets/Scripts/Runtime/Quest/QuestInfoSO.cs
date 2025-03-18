@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "QuestDataSO", menuName = "ScriptableObjects/QuestDataSO", order = 1)]
-public class QuestDataSO : ScriptableObject
+[CreateAssetMenu(fileName = "QuestInfoSO", menuName = "ScriptableObjects/QuestInfoSO", order = 1)]
+public class QuestInfoSO : ScriptableObject
 {
     [field: SerializeField]
     public string id { get; private set; }
@@ -13,7 +13,7 @@ public class QuestDataSO : ScriptableObject
 
     [Header("Requirements")]
     public int respectRequirement;
-    public QuestDataSO[] questPrerequisites;
+    public QuestInfoSO[] questPrerequisites;
 
     [Header("Steps")]
     public GameObject[] questStepPrefabs;

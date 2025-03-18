@@ -6,10 +6,12 @@ public abstract class QuestStep : MonoBehaviour
 {
     private bool isFinished = false;
     private string questId;
+    private int stepIndex;
 
-    public void InitializeQuestStep(string id)
+    public void InitializeQuestStep(string id, int stepIndex)
     {
         this.questId = id;
+        this.stepIndex = stepIndex;
     }
 
 
@@ -23,5 +25,10 @@ public abstract class QuestStep : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+    }
+
+    protected void ChangeState(string newState)
+    {
+        GameManager.instance.questEvents.QuestStepStateChange(questId, stepIndex, new QuestStepState(newState));
     }
 }

@@ -17,6 +17,8 @@ public class QuestManager : MonoBehaviour
         GameManager.instance.questEvents.onStartQuest += StartQuest;
         GameManager.instance.questEvents.onAdvanceQuest += AdvanceQuest;
         GameManager.instance.questEvents.onFinishQuest += FinishQuest;
+
+        GameManager.instance.questEvents.onQuestStepStateChange += QuestStepStateChange;
     }
 
     private void OnDisable()
@@ -24,6 +26,8 @@ public class QuestManager : MonoBehaviour
         GameManager.instance.questEvents.onStartQuest -= StartQuest;
         GameManager.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
         GameManager.instance.questEvents.onFinishQuest -= FinishQuest;
+
+        GameManager.instance.questEvents.onQuestStepStateChange -= QuestStepStateChange;
     }
 
     private void Start()
@@ -49,7 +53,7 @@ public class QuestManager : MonoBehaviour
             //TODO: Set an if statement for a requirement to start a quest, for now we can start every quest immediatly
             if(quest.state == QuestState.REQUIREMENTS_NOT_MET)
             {
-                ChangeQuestState(quest.data.id, QuestState.CAN_START);
+                ChangeQuestState(quest.info.id, QuestState.CAN_START);
             }
         }
     }
@@ -67,7 +71,7 @@ public class QuestManager : MonoBehaviour
 
         Quest quest = GetQuestById(id);
         quest.InstantiateCurrentQuestStep(this.transform);
-        ChangeQuestState(quest.data.id, QuestState.IN_PROGRESS);
+        ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
 
     }
 
@@ -89,22 +93,29 @@ public class QuestManager : MonoBehaviour
         //if there are none, finish quest
         else
         {
-            ChangeQuestState(quest.data.id, QuestState.CAN_FINISH);
+            ChangeQuestState(quest.info.id, QuestState.CAN_FINISH);
         }
     }
 
     private void FinishQuest(string id)
     {
         Quest quest = GetQuestById(id);
-        ChangeQuestState(quest.data.id, QuestState.FINISHED);
+        ChangeQuestState(quest.info.id, QuestState.FINISHED);
+    }
+
+    private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
+    {
+        Quest quest = GetQuestById(id);
+        quest.StoreQuestStepState(questStepState, stepIndex);
+        ChangeQuestState(id, quest.state);
     }
 
     private Dictionary<string, Quest> CreateQuestMap()
     {
-        QuestDataSO[] allQuests = Resources.LoadAll<QuestDataSO>("QuestDatas");
+        QuestInfoSO[] allQuests = Resources.LoadAll<QuestInfoSO>("QuestDatas");
 
         Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
-        foreach (QuestDataSO questData in allQuests)
+        foreach (QuestInfoSO questData in allQuests)
         {
             if (idToQuestMap.ContainsKey(questData.id))
             {
@@ -123,5 +134,22 @@ public class QuestManager : MonoBehaviour
             Debug.LogError("ID not found in questMap: " + id);
         }
         return quest;
+    }
+
+
+    //test function, when you quit the game it prints out the current quest(s) data to save for later
+    private void OnApplicationQuit()
+    {
+        foreach(Quest quest in _questMap.Values)
+        {
+            QuestData questData = quest.GetQuestData();
+            Debug.Log(quest.info.id);
+            Debug.Log("state = " + questData.state);
+            Debug.Log("index = " + questData.questStepIndex);
+            foreach(QuestStepState stepState in questData.questStepState)
+            {
+                Debug.Log("step state = " + stepState.state);
+            }
+        }
     }
 }

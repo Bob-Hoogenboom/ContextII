@@ -16,8 +16,18 @@ public class BloemetjeGevenQuestStep : QuestStep
         //Condition Check, did you do the thing, yes? finish quest, no? return*
         if (_flowerGet) return;
 
+        UpdateState();
+
         FinishedQuestStep();
 
         _flowerGet = true;
     }
+
+    private void UpdateState()
+    {
+        string state = _flowerGet.ToString();
+        ChangeState(state);
+    }
+
+
 }
