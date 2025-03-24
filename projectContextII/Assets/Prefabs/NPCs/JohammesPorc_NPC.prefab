@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8978246824647000233}
+  - {fileID: 5402834633653604822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &976224670429175133
@@ -49,8 +50,8 @@ MonoBehaviour:
   dialogueIndex: 0
   dialogue:
   - QuestState: 0
-    name: 
-    color: {r: 0, g: 0, b: 0, a: 0}
+    name: Johammes Porc
+    color: {r: 0.8301887, g: 0.5521538, b: 0.712248, a: 1}
     clip: {fileID: 0}
     sentences:
     - 'Ahh basta ik kan niets zien zo in mijn keuken, wat ga ik doen... '
@@ -58,7 +59,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - QuestState: 1
-    name: 
+    name: Johammes Porc
     color: {r: 0, g: 0, b: 0, a: 0}
     clip: {fileID: 0}
     sentences:
@@ -70,7 +71,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - QuestState: 2
-    name: 
+    name: Johammes Porc
     color: {r: 0, g: 0, b: 0, a: 0}
     clip: {fileID: 0}
     sentences:
@@ -80,7 +81,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - QuestState: 3
-    name: 
+    name: Johammes Porc
     color: {r: 0, g: 0, b: 0, a: 0}
     clip: {fileID: 0}
     sentences:
@@ -97,7 +98,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - QuestState: 4
-    name: 
+    name: Johammes Porc
     color: {r: 0, g: 0, b: 0, a: 0}
     clip: {fileID: 0}
     sentences:
@@ -109,7 +110,7 @@ MonoBehaviour:
   questData: {fileID: 0}
   startPoint: 1
   finishPoint: 1
-  _questIndicator: {fileID: 0}
+  _questIndicator: {fileID: 3335955929475756186}
   interactDescription: 
   interactIcon: {fileID: 0}
 --- !u!136 &4282553877255601221
@@ -218,3 +219,89 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &5360761505668193075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4892230153139055898}
+    m_Modifications:
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602325075894109201, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestIndicators
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f1f26ea0f6b5a40977f2868f2866e3, type: 3}
+--- !u!114 &3335955929475756186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7218973410036181929, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5360761505668193075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f947c854d7cc9541b310a72a0f36590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5402834633653604822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5360761505668193075}
+  m_PrefabAsset: {fileID: 0}
