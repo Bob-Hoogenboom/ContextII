@@ -77,7 +77,6 @@ public class QuestManager : MonoBehaviour
 
     private void AdvanceQuest(string id)
     {
-        //TODO advance Quest
         Debug.Log("Advance Quest: " + id);
 
         Quest quest = GetQuestById(id);
@@ -115,13 +114,13 @@ public class QuestManager : MonoBehaviour
         QuestInfoSO[] allQuests = Resources.LoadAll<QuestInfoSO>("QuestDatas");
 
         Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
-        foreach (QuestInfoSO questData in allQuests)
+        foreach (QuestInfoSO questInfo in allQuests)
         {
-            if (idToQuestMap.ContainsKey(questData.id))
+            if (idToQuestMap.ContainsKey(questInfo.id))
             {
-                Debug.LogWarning("Duplicate ID found: " + questData.id);
+                Debug.LogWarning("Duplicate ID found: " + questInfo.id);
             }
-            idToQuestMap.Add(questData.id, new Quest(questData));
+            idToQuestMap.Add(questInfo.id, LoadQuest(questInfo));
         }
         return idToQuestMap;
     }
@@ -142,14 +141,51 @@ public class QuestManager : MonoBehaviour
     {
         foreach(Quest quest in _questMap.Values)
         {
+            SaveQuest(quest);
+        }
+    }
+
+    private void SaveQuest(Quest quest)
+    {
+        try
+        {
             QuestData questData = quest.GetQuestData();
-            Debug.Log(quest.info.id);
-            Debug.Log("state = " + questData.state);
-            Debug.Log("index = " + questData.questStepIndex);
-            foreach(QuestStepState stepState in questData.questStepState)
+            //Serilize using Jasonutility, but can be swapped with anything you prefer
+            string serializedData = JsonUtility.ToJson(questData);
+
+            //player prefs save, can be switched out for a real JSon file later
+            PlayerPrefs.SetString(quest.info.id, serializedData);
+
+            Debug.Log(serializedData);
+        }
+        catch (System.Exception e) 
+        {
+            Debug.LogError("Failed to Save Quest with id " + quest.info.id + ": " + e);
+        }
+    }
+
+    private Quest LoadQuest(QuestInfoSO questInfo)
+    {
+        Quest quest = null;
+        try
+        {
+            //Load quest from save
+            if (PlayerPrefs.HasKey(questInfo.id))
             {
-                Debug.Log("step state = " + stepState.state);
+                string serializedData = PlayerPrefs.GetString(questInfo.id);
+                QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
+                quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepState);
+            }
+            //otherwise, initialize new quest
+            else
+            {
+                quest = new Quest(questInfo);
             }
         }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Failed to load quest with id " + quest.info.id + ": " + e );
+        }
+        return quest;
     }
 }

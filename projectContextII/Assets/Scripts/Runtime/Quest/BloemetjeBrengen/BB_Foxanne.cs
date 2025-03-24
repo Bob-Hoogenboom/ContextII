@@ -24,4 +24,10 @@ public class BB_Foxanne : QuestStep
         string state = _bloemetjeGebracht.ToString();
         ChangeState(state);
     }
+
+    protected override void SetQuestStepState(string state)
+    {
+        this._bloemetjeGebracht = System.Boolean.Parse(state);
+        UpdateState();
+    }
 }

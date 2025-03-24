@@ -1,4 +1,5 @@
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,6 +23,24 @@ public class Quest
         }
     }
 
+    public Quest(QuestInfoSO info, QuestState state, int currentQuestStepIndex, QuestStepState[] questStepsStates)
+    {
+        this.info = info;
+        this.state = state;
+        this.currentQuestStepIndex = currentQuestStepIndex;
+        this.questStepsStates = questStepsStates;
+
+        //something changed durring development and the save data is now out of sync
+        if(this.questStepsStates.Length != this.info.questStepPrefabs.Length)
+        {
+            Debug.LogWarning("Quest Step[ Prefabs and Quest Step States are "
+                + "of different lengths. this indicateds something changed "
+                + "with the QuestInfo and the save data now out of sync. "
+                + "reset your data - as this might cause issues. QuestId: " + this.info.id
+                );
+        }
+    }   
+
     public void MoveToNextStep()
     {
         currentQuestStepIndex++;
@@ -39,7 +58,7 @@ public class Quest
         {
             //#Can be changed to object pooling instead of instantiating and finding the component
             QuestStep questStep = Object.Instantiate<GameObject>(questStepPrefab, parentTransform).GetComponent<QuestStep>();
-            questStep.InitializeQuestStep(info.id, currentQuestStepIndex);
+            questStep.InitializeQuestStep(info.id, currentQuestStepIndex, questStepsStates[currentQuestStepIndex].state);
         }
     }
 

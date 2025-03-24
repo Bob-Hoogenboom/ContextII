@@ -29,5 +29,10 @@ public class BloemetjeGevenQuestStep : QuestStep
         ChangeState(state);
     }
 
+    protected override void SetQuestStepState(string state)
+    {
+        this._flowerGet = System.Boolean.Parse(state);
+        UpdateState();
+    }
 
 }
