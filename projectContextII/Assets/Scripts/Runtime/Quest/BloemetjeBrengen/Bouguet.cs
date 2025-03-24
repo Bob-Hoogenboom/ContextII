@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fiets : MonoBehaviour, IInteractable
+public class Bouguet : MonoBehaviour, IInteractable
 {
-    [Header("Config")]
-    [SerializeField] private float respawnTimeSeconds = 5;
+    [Header("ObjectConfig")]
     [SerializeField]
-    private bool fietsIsGeduwed = false;
+    private float respawnTime = 5f;
     [SerializeField]
-    private Collider boxCol;
+    private bool isPickedUp = false;
+    [SerializeField]
+    private Collider col;
+    [SerializeField]
+    private GameObject flowerGRFX;
 
     [Header("Interface")]
     [SerializeField]
@@ -25,7 +28,7 @@ public class Fiets : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        FietsTyftOm();
+        FlowerTouched();
     }
 
     public void InteractPopUp()
@@ -38,23 +41,22 @@ public class Fiets : MonoBehaviour, IInteractable
         OnUIHide?.Invoke();
     }
 
-    private void FietsTyftOm()
+    private void FlowerTouched()
     {
-        if (fietsIsGeduwed) return;
+        if (isPickedUp) return;
 
-        //GameManager.instance.miscEvents.DuwFiets();
+        GameManager.instance.miscEvents.FlowerGet();
 
-        boxCol.enabled = false;
-        transform.Rotate(-90f, 0f, 0f);
-        fietsIsGeduwed = true;
+        col.enabled = false;
+        flowerGRFX.SetActive(false);
         StopAllCoroutines();
-        StartCoroutine(RespawnAfterTime());
+        StartCoroutine(Respawn());
     }
 
-    private IEnumerator RespawnAfterTime()
+    private IEnumerator Respawn()
     {
-        yield return new WaitForSeconds(respawnTimeSeconds);
-        boxCol.enabled = true;
-        transform.Rotate(0f, 0f, 0f);
+        yield return new WaitForSeconds(respawnTime);
+        col.enabled = true;
+        flowerGRFX.SetActive(true);
     }
 }

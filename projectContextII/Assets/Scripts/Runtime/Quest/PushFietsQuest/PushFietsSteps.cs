@@ -28,4 +28,9 @@ public class PushFietsSteps : QuestStep
             FinishedQuestStep();
         }
     }
+
+    protected override void SetQuestStepState(string state)
+    {
+        this._fietsIsGeduwed = System.Boolean.Parse(state);
+    }
 }

@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     [Header("Quest")]
     [SerializeField]
-    private QuestDataSO questData;
+    private QuestInfoSO questData;
     private QuestState _currentQuestState;
 
     [Header("Config")]
@@ -94,7 +94,7 @@ public class NPC : MonoBehaviour, IInteractable
     private void QuestStateChange(Quest quest)
     {
         //Only update the quest stat if the point has the corresponding quest 
-        if (quest.data.id.Equals(questData.id))
+        if (quest.info.id.Equals(questData.id))
         {
             _currentQuestState = quest.state;
             //Debug.Log("Quest with id: " + questData.id + " updated to State: " + _currentQuestState);
