@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2686834948453043891}
   - component: {fileID: 678951726563836015}
+  - component: {fileID: 4848133918642152303}
+  - component: {fileID: 4436368004195816060}
   m_Layer: 0
   m_Name: DeathPlane
   m_TagString: Untagged
@@ -53,3 +55,43 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 5, z: 75}
   m_Center: {x: -15, y: 0, z: 0}
+--- !u!114 &4848133918642152303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845356500852849407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d4951ae43aa7741956d6ac2413510e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4436368004195816060}
+        m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
+        m_MethodName: GoToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4436368004195816060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845356500852849407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7505f16e23a15ce4d8a7029ad652f2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleWipe: {fileID: 0}
