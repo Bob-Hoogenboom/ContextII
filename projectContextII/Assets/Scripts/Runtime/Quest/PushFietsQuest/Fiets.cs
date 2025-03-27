@@ -42,7 +42,7 @@ public class Fiets : MonoBehaviour, IInteractable
     {
         if (fietsIsGeduwed) return;
 
-        GameManager.instance.miscEvents.DuwFiets();
+        //GameManager.instance.miscEvents.DuwFiets();
 
         boxCol.enabled = false;
         transform.Rotate(-90f, 0f, 0f);

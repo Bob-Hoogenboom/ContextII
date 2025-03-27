@@ -18,4 +18,4 @@ MonoBehaviour:
   questPrerequisites: []
   questStepPrefabs:
   - {fileID: 1090383207539900919, guid: f7e83e2d9ee1d2b44886bcdf867f1369, type: 3}
-  duurzaamheid: 5
+  sustainability: 0
