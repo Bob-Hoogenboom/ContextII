@@ -1,0 +1,312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1292275786001824299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7687996257978383814}
+  - component: {fileID: 5655663627111117980}
+  - component: {fileID: 8404489277107684968}
+  m_Layer: 0
+  m_Name: "Andr\xE9 Haas_NPC"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7687996257978383814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292275786001824299}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.16, y: -0.062, z: -2.559}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6241026686665109001}
+  - {fileID: 1053958863937080626}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5655663627111117980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292275786001824299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef55146a06d8414b924d63082d7b591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  dialogue:
+  - QuestState: 0
+    name: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+    clip: {fileID: 0}
+    sentences:
+    - 
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 1
+    name: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+    clip: {fileID: 0}
+    sentences:
+    - Hee jij doar! Jij ziet ur uit alsof je handig ben...
+    - "Nou, kiek es\u2026.. "
+    - Ik heb un kleeein probleempie,
+    - mijn kelder is helemaal ondergelopen en ik kom niet bij de spullen voor mijn
+      plantjes.
+    - Die werfkelders, die komme nog uit ut jaor kruik en die leidings, die zijn
+      ouwer dan ouwe Jan. Ken jij daar ff naor kieke?
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 2
+    name: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+    clip: {fileID: 0}
+    sentences:
+    - ik haat natte sokken hebben...
+    - Wat un draaama, joh! Je hele kelder onder water...
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 3
+    name: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+    clip: {fileID: 0}
+    sentences:
+    - Aaahh, heel erg bedank! Ik dach dat ik nooit meer bij mn plantenveuding zou
+      komme.
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  - QuestState: 4
+    name: 
+    color: {r: 0, g: 0, b: 0, a: 0}
+    clip: {fileID: 0}
+    sentences:
+    - " Toen ik jong was, had ik nie zo veul vriende. Maar op un dag kwam ik bij
+      de lokale blummewinkel\u2026"
+    - " Ik was helemoal door \u2018t dolle! Zoveel verschillende planties en blummekes,
+      joh!"
+    - Als ik ze nie plant, wie doet ut dan? De gemeente? Nee joh, die maaie alles
+      plat. Mensen? Misschien eentje op de honderd.
+    - "En toch\u2026 als t  eenmaal staot, dan lope ze net ff langzamer langs. Make
+      ze un fotootie."
+    - "Hoor ik iemand zegge: \"Goh, wat gezellug zo.\" Dan denk ik: Zie je wel! M\u2019n
+      mentor zee altijd: \"Zorg veur de planties, dan zorge ze ok veur jou, Andre.\"
+      Da leef ik na!"
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  questData: {fileID: 0}
+  startPoint: 1
+  finishPoint: 1
+  _questIndicator: {fileID: 7642997002896370814}
+  interactDescription: Andre Haas
+  interactIcon: {fileID: 0}
+--- !u!136 &8404489277107684968
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292275786001824299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.73242927
+  m_Height: 3.165101
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 1.4576209}
+--- !u!1 &5899892828366755120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6241026686665109001}
+  - component: {fileID: 5824936905728466750}
+  - component: {fileID: 3677491044679969424}
+  m_Layer: 0
+  m_Name: "Andr\xE9 Haas model"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6241026686665109001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899892828366755120}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7687996257978383814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5824936905728466750
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899892828366755120}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3677491044679969424
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899892828366755120}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1026701238532638679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7687996257978383814}
+    m_Modifications:
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.193
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602325075894109201, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestIndicators
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30f1f26ea0f6b5a40977f2868f2866e3, type: 3}
+--- !u!4 &1053958863937080626 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 45028671641684709, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1026701238532638679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7642997002896370814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7218973410036181929, guid: 30f1f26ea0f6b5a40977f2868f2866e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1026701238532638679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f947c854d7cc9541b310a72a0f36590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

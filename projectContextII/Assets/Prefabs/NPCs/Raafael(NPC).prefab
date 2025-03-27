@@ -86,10 +86,9 @@ MonoBehaviour:
     color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
     clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
     sentences:
-    - PSST, hey jij daar. Zie je mijn super coole fatbike?
-    - Fatbikes zijn VEEEEL sneller dan die stomme fiets daar.
-    - Ze zouden al die fietsen moeten omtrappen, in de gracht gooien en ook een coole
-      fatbike moeten kopen
+    - Ik wil... eh ... Ik wil iemand een bloemetje geven.
+    - Maar ik weet niet welke...
+    - Wat zeg je met een bloem?
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
@@ -98,7 +97,7 @@ MonoBehaviour:
     color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
     clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
     sentences:
-    - Fatbike gang, lets goooo
+    - Bloemetje...hmm welke bloemetje?
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
@@ -107,8 +106,10 @@ MonoBehaviour:
     color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
     clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
     sentences:
-    - HAHAHA YESSS lekker gedaan ouwe, stomme fietsen ook overal hier in utrecht
-      haha
+    - Wow dat zijn echt super mooie bloemen!
+    - Maar... nu durf ik ze niet te brengen, kan jij het doen?
+    - ... Je hebt gelijkt, als ik het doe heeft het meer impact... kop op Raafael
+      je kan dit!
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
@@ -117,16 +118,16 @@ MonoBehaviour:
     color: {r: 0.5396226, g: 0.5396226, b: 0.5396226, a: 1}
     clip: {fileID: 8300000, guid: 9cc54dbf68d709248933345f60c4309c, type: 3}
     sentences:
-    - haha kan nog steeds niet geloven dat je dat deed, goud ouwe
+    - Dankjewel voor je hulp :3
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
-  questData: {fileID: 11400000, guid: 6d61951611971154c9a7ce6c003d6b76, type: 2}
+  questData: {fileID: 11400000, guid: fb9d96b172042be4e9726fc7b64f0fe8, type: 2}
   startPoint: 1
   finishPoint: 1
   _questIndicator: {fileID: 734316225638880950}
   interactDescription: Praten
-  interactIcon: {fileID: 21300000, guid: 943277f9bf930114a9e4f81e125fd433, type: 3}
+  interactIcon: {fileID: 21300000, guid: 511b6a0b51190c544bca7e87f0f03179, type: 3}
 --- !u!1001 &7934817693628153119
 PrefabInstance:
   m_ObjectHideFlags: 0
