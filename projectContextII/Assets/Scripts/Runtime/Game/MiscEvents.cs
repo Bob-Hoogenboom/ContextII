@@ -23,5 +23,4 @@ public class MiscEvents
             OnFlowersCollected();
         }
     }
-
 } 
