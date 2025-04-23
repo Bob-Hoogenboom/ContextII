@@ -84,7 +84,7 @@ namespace Player
 
         private void CheckPlayerGround()
         {
-            Collider[] floorHit = Physics.OverlapBox(transform.position + heightOffset, boxSize / 2, Quaternion.identity);
+            Collider[] floorHit = Physics.OverlapBox(transform.position + heightOffset, boxSize / 2, Quaternion.identity, -1 ,QueryTriggerInteraction.Ignore);
             if (floorHit.Length > 0)
             {
                 isOnGround = true;

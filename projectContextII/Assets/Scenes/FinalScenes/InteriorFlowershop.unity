@@ -333,7 +333,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a3fb0fa6ca71ea42b44751c378deac3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cca590dba72327c4f9b6fc60f31a018c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -4095,7 +4095,7 @@ PrefabInstance:
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
@@ -4105,12 +4105,12 @@ PrefabInstance:
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
@@ -4120,7 +4120,7 @@ PrefabInstance:
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
@@ -4135,7 +4135,7 @@ PrefabInstance:
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6999572719366364431, guid: 762d6e4eda3d93b4480dd6b1291c7d54,
         type: 3}
@@ -5124,7 +5124,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5655663627111117980, guid: 0874d70514b1ca94fb06910d6dc77c89, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -7,8 +7,11 @@ public class QuestManager : MonoBehaviour
 {
     private Dictionary<string, Quest> _questMap;
 
+
     private void Awake()
     {
+
+
         _questMap = CreateQuestMap();
     }
 
@@ -32,6 +35,8 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        
+
         //broadcast the intitial state of all quests on startup
         foreach (Quest quest in _questMap.Values)
         {
