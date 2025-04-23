@@ -2081,12 +2081,16 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Liselot
+      value: Liselot Ankone
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Researcher
+      value: 'Researcher
+
+        -Documentation
+
+        -Dialogue'
       objectReference: {fileID: 0}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
@@ -2394,12 +2398,16 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Mats
+      value: Mats de Wind
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Artist
+      value: 'Artist
+
+        -Lighting
+
+        -Enviorment'
       objectReference: {fileID: 0}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
@@ -4111,12 +4119,16 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Miguel
+      value: Miguel Mensinga
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Artist
+      value: 'Artist
+
+        -Props
+
+        -Dialogue'
       objectReference: {fileID: 0}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
@@ -4821,13 +4833,21 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Rens
+      value: Rens Rijpstra
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Artist
+      value: 'Artist
+
+        -Character Design'
       objectReference: {fileID: 0}
+    - target: {fileID: 6750909064181320260, guid: a387421d9dc60a24b88d01169406df4c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 72a5369334395af4a9449aec7a99d17c,
+        type: 3}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_Name
@@ -4955,12 +4975,14 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Auree
+      value: Auree Beetz
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Artist
+      value: 'Artist
+
+        -Props'
       objectReference: {fileID: 0}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
@@ -7063,8 +7085,18 @@ PrefabInstance:
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Artist
+      value: 'Artist
+
+        -Props
+
+        -NPCs'
       objectReference: {fileID: 0}
+    - target: {fileID: 6750909064181320260, guid: a387421d9dc60a24b88d01169406df4c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1953bcb40e837d4f9f2927648b86c4d,
+        type: 3}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_Name
@@ -9892,12 +9924,18 @@ PrefabInstance:
     - target: {fileID: 680091120386015616, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Jordi
+      value: Jordi Kruk
       objectReference: {fileID: 0}
     - target: {fileID: 1954686117193571502, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_text
-      value: Lead Artist
+      value: 'Lead Artist
+
+        -Props
+
+        -Enviorment
+
+        -Shaders'
       objectReference: {fileID: 0}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}

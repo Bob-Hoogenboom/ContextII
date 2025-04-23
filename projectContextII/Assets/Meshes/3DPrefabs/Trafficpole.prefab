@@ -76,6 +76,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6699632184542219527}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1428658186386a0479bf087a96a27186,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1240963781029661738}
   m_SourcePrefab: {fileID: 100100000, guid: 1428658186386a0479bf087a96a27186, type: 3}
 --- !u!1 &3696525681161161407 stripped
 GameObject:
@@ -104,3 +108,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38124692, y: 1.3492415, z: 0.33923286}
   m_Center: {x: -0.000000029802322, y: 0.6671277, z: 0.008617431}
+--- !u!114 &1240963781029661738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696525681161161407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e59c13c2067e4444a365a5cee3ccf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    QuestState: 0
+    name: Rood-Wit Paaltje
+    color: {r: 0.8490566, g: 0.35083658, b: 0.35083658, a: 1}
+    clip: {fileID: 0}
+    sentences:
+    - Paaltje lijkt niet nuttig maar houden autos tegen voor een veilieg voetgangers
+      verkeer
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  interactDescription: 
+  interactIcon: {fileID: 21300000, guid: 943277f9bf930114a9e4f81e125fd433, type: 3}

@@ -164,30 +164,53 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2750656743183856393}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2832062784266251148, guid: 2bf80e8794f286a40bb0b46a0995671f,
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bf80e8794f286a40bb0b46a0995671f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5816754377258172108}
+      addedObject: {fileID: 102035420326941106}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bf80e8794f286a40bb0b46a0995671f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7850368949309482295}
   m_SourcePrefab: {fileID: 100100000, guid: 2bf80e8794f286a40bb0b46a0995671f, type: 3}
---- !u!4 &5307987933877425019 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2bf80e8794f286a40bb0b46a0995671f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5630479861982147728}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7597283961209134876 stripped
+--- !u!1 &4819434667732273601 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2832062784266251148, guid: 2bf80e8794f286a40bb0b46a0995671f,
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2bf80e8794f286a40bb0b46a0995671f,
     type: 3}
   m_PrefabInstance: {fileID: 5630479861982147728}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &5816754377258172108
+--- !u!114 &102035420326941106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819434667732273601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e59c13c2067e4444a365a5cee3ccf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    QuestState: 0
+    name: Lantaarn
+    color: {r: 0.9960785, g: 0.8352942, b: 0.32941177, a: 1}
+    clip: {fileID: 0}
+    sentences:
+    - Planten en bloemen aan lantaarnpalen maken de stad mooier
+    - Ook trekken de planten nuttige insecten aan die bijdragen aan duurzaamheid
+    endOfDialogue:
+      m_PersistentCalls:
+        m_Calls: []
+  interactDescription: 
+  interactIcon: {fileID: 21300000, guid: 943277f9bf930114a9e4f81e125fd433, type: 3}
+--- !u!65 &7850368949309482295
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7597283961209134876}
+  m_GameObject: {fileID: 4819434667732273601}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -200,8 +223,14 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.37730664, y: 3.5277517, z: 0.38823366}
-  m_Center: {x: 0.00000461936, y: 1.7584187, z: 0.0054552928}
+  m_Size: {x: 0.3, y: 4, z: 0.3}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!4 &5307987933877425019 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2bf80e8794f286a40bb0b46a0995671f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5630479861982147728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7980784301747321485
 PrefabInstance:
   m_ObjectHideFlags: 0
