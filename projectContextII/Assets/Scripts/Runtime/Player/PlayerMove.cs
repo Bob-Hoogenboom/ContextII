@@ -7,7 +7,7 @@ namespace Player
     {
         private int _moveAnim;
         //RotationVars
-        private float rotationSpeed = 500f;
+        private float rotationSpeed = 900f;
         private Camera _mainCamera;
 
         public override void Start(Player runner)
