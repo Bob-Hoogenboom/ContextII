@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7687996257978383814}
   - component: {fileID: 5655663627111117980}
   - component: {fileID: 650351403786477210}
-  - component: {fileID: 1266899626384683444}
   m_Layer: 0
   m_Name: "Andr\xE9 Haas_NPC"
   m_TagString: Untagged
@@ -43,25 +42,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292275786001824299}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eef55146a06d8414b924d63082d7b591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueIndex: 0
   dialogue:
-  - QuestState: 0
-    name: 
-    color: {r: 0, g: 0, b: 0, a: 0}
-    clip: {fileID: 0}
-    sentences:
-    - 
-    endOfDialogue:
-      m_PersistentCalls:
-        m_Calls: []
   - QuestState: 1
-    name: 
-    color: {r: 0, g: 0, b: 0, a: 0}
+    name: Andre Haas
+    color: {r: 0.2656109, g: 0.7584905, b: 0.22754706, a: 1}
     clip: {fileID: 0}
     sentences:
     - Hee jij doar! Jij ziet ur uit alsof je handig ben...
@@ -113,12 +103,13 @@ MonoBehaviour:
     endOfDialogue:
       m_PersistentCalls:
         m_Calls: []
+  dialogueCamera: {fileID: 0}
   questData: {fileID: 0}
   startPoint: 1
   finishPoint: 1
   _questIndicator: {fileID: 7642997002896370814}
-  interactDescription: Andre Haas
-  interactIcon: {fileID: 0}
+  interactDescription: Praten
+  interactIcon: {fileID: 21300000, guid: f8b1538663d0e5a488de55b711d4780d, type: 3}
 --- !u!65 &650351403786477210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -140,36 +131,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 3, z: 0.8}
   m_Center: {x: 0, y: 1.5, z: 1.16}
---- !u!114 &1266899626384683444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292275786001824299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e59c13c2067e4444a365a5cee3ccf0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    QuestState: 0
-    name: Andre  Haas
-    color: {r: 0.13604124, g: 0.7283019, b: 0.16603564, a: 1}
-    clip: {fileID: 0}
-    sentences:
-    - Hee jij doar! Jij ziet ur uit alsof je handig ben...
-    - "Nou, kiek es\u2026.. "
-    - Ik heb un kleeein probleempie,
-    - mijn kelder is helemaal ondergelopen en ik kom niet bij de spullen voor mijn
-      plantjes.
-    - Die werfkelders, die komme nog uit ut jaor kruik en die leidings, die zijn
-      ouwer dan ouwe Jan. Ken jij daar ff naor kieke?
-    endOfDialogue:
-      m_PersistentCalls:
-        m_Calls: []
-  interactDescription: Praten
-  interactIcon: {fileID: 21300000, guid: f8b1538663d0e5a488de55b711d4780d, type: 3}
 --- !u!1001 &1026701238532638679
 PrefabInstance:
   m_ObjectHideFlags: 0

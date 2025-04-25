@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using Unity.VisualScripting;
+using Cinemachine;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     private Player.Player _player;
     private Dialogue _dialogue;
+    private CinemachineVirtualCamera _focusCam;
 
     [Header("Variables")]
     [SerializeField] private float dialogueSpeed = 0.05f;
@@ -28,9 +31,10 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(false);
     }
  
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, CinemachineVirtualCamera cam)
     {
         _dialogue = dialogue;
+        _focusCam = cam;
         Debug.Log("StartingConvo" + _dialogue.name);
 
         //StartDialogueAudio();
@@ -39,6 +43,17 @@ public class DialogueManager : MonoBehaviour
         nameBG.color = _dialogue.color;  
         dialogueUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+
+        //switch camera if objects has a camera
+        if(_focusCam)
+        {
+            _focusCam.Priority = 100;
+            Debug.Log("Enter Dialogue Start Camera");
+        }
+        else
+        {
+            Camera.main.GetComponent<CinemachineBrain>().enabled = false;
+        }
 
 
         foreach (string sentence in _dialogue.sentences)
@@ -78,6 +93,15 @@ public class DialogueManager : MonoBehaviour
         _player.isInteracting = false;//Talking is done!
         dialogueUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+
+        if (_focusCam != null)
+        {
+            _focusCam.Priority = 1;
+        }
+        else
+        {
+            Camera.main.GetComponent<CinemachineBrain>().enabled = true;
+        }
 
         _dialogue.endOfDialogue.Invoke();
         Debug.Log("convo ended");

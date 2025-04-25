@@ -2822,6 +2822,7 @@ GameObject:
   - component: {fileID: 1151925215}
   - component: {fileID: 1151925214}
   - component: {fileID: 1151925213}
+  - component: {fileID: 1151925217}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2949,6 +2950,40 @@ Transform:
   - {fileID: 664052836}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 45.559, y: 90, z: 0}
+--- !u!114 &1151925217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151925212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1300398177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5124,8 +5159,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5655663627111117980, guid: 0874d70514b1ca94fb06910d6dc77c89, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5143,7 +5177,6 @@ SceneRoots:
   - {fileID: 1644657043}
   - {fileID: 1904275020}
   - {fileID: 7528253}
-  - {fileID: 265280710}
   - {fileID: 1774683649}
   - {fileID: 1462259443}
   - {fileID: 1714695605}
@@ -5159,3 +5192,4 @@ SceneRoots:
   - {fileID: 267526900}
   - {fileID: 24593160}
   - {fileID: 8845928750338850475}
+  - {fileID: 265280710}
