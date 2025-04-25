@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,17 +44,19 @@ public class PauseMenu : MonoBehaviour
     private void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1.0f;
         gameIsPaused = false;
+        Camera.main.GetComponent<CinemachineBrain>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; //Unity quirck. cursor doesnt lock right away so we hide it
     }
 
     private void PauseGame()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 1.0f;
         gameIsPaused = true;
+        Camera.main.GetComponent<CinemachineBrain>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true; //Unity quirck. Cursor show because we hid it when resuming ^
     }
 
 

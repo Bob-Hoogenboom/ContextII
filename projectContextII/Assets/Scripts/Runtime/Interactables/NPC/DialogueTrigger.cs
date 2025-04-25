@@ -35,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour ,IInteractable
 
     private void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, null);
     }
 
 }

@@ -43,7 +43,7 @@ public class BB_Foxanne : QuestStep, IInteractable
 
     public void Interact()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue, null);
     }
 
     public void InteractPopUp()

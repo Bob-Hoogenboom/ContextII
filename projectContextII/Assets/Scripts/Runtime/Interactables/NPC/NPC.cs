@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class NPC : MonoBehaviour, IInteractable
     [Header("Dialogue")]
     public int dialogueIndex = 0;
     public Dialogue[] dialogue;
+    public CinemachineVirtualCamera dialogueCamera;
 
     [Header("Quest")]
     [SerializeField]
@@ -75,7 +77,7 @@ public class NPC : MonoBehaviour, IInteractable
         //Ternary operator 'var = con? exp true : exp false;'
         int dialogueToPlay = dialogueIndex >= dialogue.Length? dialogueIndex -1 : dialogueIndex;
 
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue[dialogueToPlay]);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue[dialogueToPlay], dialogueCamera);
     }
 
     private void TriggerQuest()
@@ -94,6 +96,8 @@ public class NPC : MonoBehaviour, IInteractable
     private void QuestStateChange(Quest quest)
     {
         //Only update the quest stat if the point has the corresponding quest 
+        if (questData == null) return;
+
         if (quest.info.id.Equals(questData.id))
         {
             _currentQuestState = quest.state;
