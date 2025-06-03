@@ -118,6 +118,8 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestById(id);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);
+
+        SaveQuest(quest);
     }
 
     private void QuestStepStateChange(string id, int stepIndex, QuestStepState questStepState)
