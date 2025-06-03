@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-    public static QuestManager instance { get; private set; }
+    [SerializeField] private bool loadQuestState = true;
+
+    //public static QuestManager instance { get; private set; }
     private Dictionary<string, Quest> _questMap;
+
 
     private void Awake()
     {
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -19,7 +22,7 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        instance = this;
+        instance = this;*/
 
         _questMap = CreateQuestMap();
     }
@@ -44,8 +47,6 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
-        
-
         //broadcast the intitial state of all quests on startup
         foreach (Quest quest in _questMap.Values)
         {
@@ -108,6 +109,8 @@ public class QuestManager : MonoBehaviour
         {
             ChangeQuestState(quest.info.id, QuestState.CAN_FINISH);
         }
+
+        SaveQuest(quest);
     }
 
     private void FinishQuest(string id)
@@ -185,11 +188,12 @@ public class QuestManager : MonoBehaviour
         try
         {
             //Load quest from save
-            if (PlayerPrefs.HasKey(questInfo.id))
+            if (PlayerPrefs.HasKey(questInfo.id) && loadQuestState)
             {
                 string serializedData = PlayerPrefs.GetString(questInfo.id);
                 QuestData questData = JsonUtility.FromJson<QuestData>(serializedData);
                 quest = new Quest(questInfo, questData.state, questData.questStepIndex, questData.questStepState);
+                Debug.Log("Quest Is Loaded");
             }
             //otherwise, initialize new quest
             else
