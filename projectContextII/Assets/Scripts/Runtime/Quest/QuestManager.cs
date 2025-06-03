@@ -88,6 +88,7 @@ public class QuestManager : MonoBehaviour
         quest.InstantiateCurrentQuestStep(this.transform);
         ChangeQuestState(quest.info.id, QuestState.IN_PROGRESS);
 
+        SaveQuest(quest);
     }
 
     private void AdvanceQuest(string id)

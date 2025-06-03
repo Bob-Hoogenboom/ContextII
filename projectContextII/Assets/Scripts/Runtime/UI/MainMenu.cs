@@ -13,12 +13,12 @@ public class MainMenu : MonoBehaviour
     {
         string versionText = Application.version.ToString();
 
-        float labelWidth = 150;
+        float labelWidth = 260;
         float labelHeight = 60;
         int fontSize = 32;
 
         GUI.skin.label.fontSize = fontSize;
-        GUI.Label(new Rect(Screen.width - labelWidth, Screen.height - labelHeight, labelWidth, labelHeight), "'" + versionText + "'");
+        GUI.Label(new Rect(Screen.width - labelWidth, Screen.height - labelHeight, labelWidth, labelHeight), "'Version: " + versionText + "'");
     }
 
     public void StartGame(int goToScene)

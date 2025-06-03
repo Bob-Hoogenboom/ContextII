@@ -4412,6 +4412,12 @@ PrefabInstance:
 
         -Dialogue'
       objectReference: {fileID: 0}
+    - target: {fileID: 6750909064181320260, guid: a387421d9dc60a24b88d01169406df4c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fed83fd43fa9b8a46a5829c10d4b256a,
+        type: 3}
     - target: {fileID: 8205239376793103539, guid: a387421d9dc60a24b88d01169406df4c,
         type: 3}
       propertyPath: m_Name
