@@ -5,12 +5,21 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    public static QuestManager instance { get; private set; }
     private Dictionary<string, Quest> _questMap;
-
 
     private void Awake()
     {
-
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        instance = this;
 
         _questMap = CreateQuestMap();
     }
@@ -160,6 +169,7 @@ public class QuestManager : MonoBehaviour
 
             //player prefs save, can be switched out for a real JSon file later
             PlayerPrefs.SetString(quest.info.id, serializedData);
+            PlayerPrefs.Save();
 
             Debug.Log(serializedData);
         }

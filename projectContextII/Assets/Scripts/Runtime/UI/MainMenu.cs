@@ -26,10 +26,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(goToScene);
     }
 
+    public void RestartSave()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
 
     public void OnApplicationQuit()
     {
-        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }
