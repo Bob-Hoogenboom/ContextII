@@ -18,9 +18,9 @@ public class BloemetjeGevenQuestStep : QuestStep
 
         UpdateState();
 
-        FinishedQuestStep();
-
         _flowerGet = true;
+
+        FinishedQuestStep();
     }
 
     private void UpdateState()
